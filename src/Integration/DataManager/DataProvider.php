@@ -1,17 +1,28 @@
 <?php
 
-namespace src\Integration;
+namespace Integration\DataManager;
 
-class DataProvider
+class DataProvider implements DataProviderInterface
 {
+    /**
+     * @var string
+     */
     private $host;
+
+    /**
+     * @var string
+     */
     private $user;
+
+    /**
+     * @var string
+     */
     private $password;
 
     /**
-     * @param $host
-     * @param $user
-     * @param $password
+     * @param string $host
+     * @param string $user
+     * @param string $password
      */
     public function __construct($host, $user, $password)
     {
@@ -21,9 +32,7 @@ class DataProvider
     }
 
     /**
-     * @param array $request
-     *
-     * @return array
+     * {@inheritdoc}
      */
     public function get(array $request)
     {
